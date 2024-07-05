@@ -13,7 +13,7 @@ export interface Todos {
 
 const initialState: TodoAppSlice = {
   isAdd: false,
-  todos: [{ id: 0, title: "", isDone: false }],
+  todos: [{ id: 0, title: "Default Task", isDone: false }],
 };
 
 export const todoAppSlice = createSlice({
