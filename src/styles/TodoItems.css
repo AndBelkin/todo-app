@@ -1,0 +1,13 @@
+.todo-items {
+    @apply flex items-center justify-start gap-4 p-4 w-full rounded-lg;
+    background-color: var(--color-accent)
+}
+
+.todo-items-done {
+    @apply text-2xl cursor-pointer;
+    color: var(--color-secondary);
+}
+
+.todo-items-title {
+    @apply text-2xl;
+}

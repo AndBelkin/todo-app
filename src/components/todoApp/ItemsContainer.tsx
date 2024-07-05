@@ -1,6 +1,7 @@
 import { FC } from "react";
 import { IoIosAddCircle } from "react-icons/io";
 import "../../styles/ItemsContainer.css";
+import TodoItems from "./TodoItems";
 
 const ItemsContainer: FC = () => {
   return (
@@ -10,8 +11,8 @@ const ItemsContainer: FC = () => {
         <p className="header-subtitle">2 задачи</p>
       </header>
       <main className="main">
-        <p>Задача</p>
-        <p>Задача</p>
+        <TodoItems />
+        <TodoItems />
       </main>
       <footer className="footer">
         <IoIosAddCircle className="footer-add-button" />
