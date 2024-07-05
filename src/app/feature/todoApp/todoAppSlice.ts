@@ -29,9 +29,12 @@ export const todoAppSlice = createSlice({
       );
       if (index != -1) state.todos[index].isDone = !action.payload.isDone;
     },
+    addNewItem: (state, action: PayloadAction<Todos>) => {
+      state.todos.push(action.payload);
+    },
   },
 });
 
-export const { changeOpen, changeIsDone } = todoAppSlice.actions;
+export const { changeOpen, changeIsDone, addNewItem } = todoAppSlice.actions;
 
 export default todoAppSlice.reducer;

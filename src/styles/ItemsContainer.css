@@ -20,7 +20,7 @@
 }
 
 .items-container .footer {
-    @apply flex justify-end w-full;
+    @apply flex justify-end w-full min-h-[50px];
 }
 
 .items-container .footer-add-button {
