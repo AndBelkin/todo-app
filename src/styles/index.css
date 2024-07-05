@@ -1,3 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+    --color-primary: #ffffff;
+    --color-accent: #585858;
+    --color-secondary: #333333;
+}
+
+* {
+    @apply m-0 p-0 box-border;
+}
+
+body {
+    color: var(--color-primary);
+    font-family: "Jost", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    background-color: var(--color-secondary);
+}
