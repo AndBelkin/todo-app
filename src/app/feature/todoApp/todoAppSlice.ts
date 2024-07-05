@@ -1,18 +1,27 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from "@reduxjs/toolkit";
 
 export interface TodoAppSlice {
-  value: number
+  isAdd: boolean;
+  todos: Todos[];
 }
 
-const initialState: TodoAppSlice = { value: 0 }
+export interface Todos {
+  id: number;
+  title: string;
+  isDone: boolean;
+}
+
+const initialState: TodoAppSlice = {
+  isAdd: false,
+  todos: [{ id: 0, title: "", isDone: false }],
+};
 
 export const todoAppSlice = createSlice({
-  name: 'todoApp',
+  name: "todoApp",
   initialState,
-  reducers: {
-  }
-})
+  reducers: {},
+});
 
-export const { } = todoAppSlice.actions
+export const {} = todoAppSlice.actions;
 
-export default todoAppSlice.reducer
+export default todoAppSlice.reducer;
