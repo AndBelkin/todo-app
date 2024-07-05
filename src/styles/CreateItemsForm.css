@@ -1,0 +1,51 @@
+.create-items-form {
+    @apply flex flex-col gap-2 p-4 w-[600px];
+    background: var(--color-accent);
+    border-radius: 8px 8px 0 0;
+}
+
+.create-items-form .wrapper {
+    @apply flex justify-between items-center;
+}
+
+.create-items-form button {
+    @apply px-2 py-1 rounded-lg;
+}
+
+.create-items-form button:focus {
+    outline: 1px #959EEF solid;
+}
+
+.cancel-button {
+    color: #959EEF;
+}
+.save-button {
+    opacity: 50%;
+}
+.title {
+    cursor: default;
+    font-size: 20px;
+}
+
+.create-items-form-input {
+    @apply relative w-full;
+}
+
+.input {
+    @apply px-4 py-2 rounded-lg w-full;
+    background-color: #716F6F;
+}
+
+.input:focus {
+    outline: 1px #959EEF solid;
+}
+
+.input-delete {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    right: 16px;
+    color: var(--color-accent);
+    font-size: 24px;
+    transform: translate(0, -50%);
+}
