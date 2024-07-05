@@ -19,9 +19,13 @@ const initialState: TodoAppSlice = {
 export const todoAppSlice = createSlice({
   name: "todoApp",
   initialState,
-  reducers: {},
+  reducers: {
+    changeOpen: (state) => {
+      state.isAdd = !state.isAdd;
+    },
+  },
 });
 
-export const {} = todoAppSlice.actions;
+export const { changeOpen } = todoAppSlice.actions;
 
 export default todoAppSlice.reducer;
