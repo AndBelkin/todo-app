@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 export interface TodoAppSlice {
   isAdd: boolean;
@@ -23,9 +23,15 @@ export const todoAppSlice = createSlice({
     changeOpen: (state) => {
       state.isAdd = !state.isAdd;
     },
+    changeIsDone: (state, action: PayloadAction<Todos>) => {
+      const index = state.todos.findIndex(
+        (item) => item.id === action.payload.id
+      );
+      if (index != -1) state.todos[index].isDone = !action.payload.isDone;
+    },
   },
 });
 
-export const { changeOpen } = todoAppSlice.actions;
+export const { changeOpen, changeIsDone } = todoAppSlice.actions;
 
 export default todoAppSlice.reducer;
