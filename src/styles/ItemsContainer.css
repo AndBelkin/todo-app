@@ -1,0 +1,30 @@
+.items-container {
+    @apply w-[600px] p-4;
+    @apply flex flex-col items-center gap-1;
+}
+
+.items-container .header {
+    @apply flex flex-col items-start gap-0 w-full;
+}
+
+.header-title {
+    @apply font-bold text-3xl cursor-default;
+}
+
+.header-subtitle {
+    @apply opacity-50 cursor-default;
+}
+
+.items-container .main {
+    @apply flex flex-col items-center gap-4 w-full;
+}
+
+.items-container .footer {
+    @apply flex justify-end w-full;
+}
+
+.items-container .footer-add-button {
+    cursor: pointer;
+    color: var(--color-accent);
+    font-size: 50px;
+}
