@@ -2,9 +2,11 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { act } from "react";
 
 export interface TodoAppSlice {
-  isAdd: boolean;
+  appMode: AppMode;
   todos: Todos[];
 }
+
+type AppMode = "none" | "new" | "update";
 
 export interface Todos {
   id: number;
@@ -13,7 +15,7 @@ export interface Todos {
 }
 
 const initialState: TodoAppSlice = {
-  isAdd: false,
+  appMode: "none",
   todos: [],
 };
 
@@ -21,13 +23,14 @@ export const todoAppSlice = createSlice({
   name: "todoApp",
   initialState,
   reducers: {
-    changeOpen: (state) => {
-      state.isAdd = !state.isAdd;
+    changeAppMode: (state, action: PayloadAction<AppMode>) => {
+      state.appMode = action.payload;
     },
-    changeIsDone: (state, action: PayloadAction<Todos>) => {
-      state.todos.map(
-        (item) => item.id === action.payload.id && (item.isDone = !item.isDone)
+    updateItem: (state, action: PayloadAction<Todos>) => {
+      const index = state.todos.findIndex(
+        (item) => item.id == action.payload.id
       );
+      state.todos[index] = action.payload;
     },
     addNewItem: (state, action: PayloadAction<Todos>) => {
       state.todos.push(action.payload);
@@ -38,7 +41,7 @@ export const todoAppSlice = createSlice({
   },
 });
 
-export const { changeOpen, changeIsDone, addNewItem, deleteItem } =
+export const { changeAppMode, updateItem, addNewItem, deleteItem } =
   todoAppSlice.actions;
 
 export default todoAppSlice.reducer;

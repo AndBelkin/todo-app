@@ -2,9 +2,10 @@ import { FC, useState } from "react";
 import { FaCircle } from "react-icons/fa";
 import "../../styles/TodoItems.css";
 import {
-  changeIsDone,
+  changeAppMode,
   deleteItem,
   Todos,
+  updateItem,
 } from "../../app/feature/todoApp/todoAppSlice";
 import { FaCircleCheck } from "react-icons/fa6";
 import { useAppDispatch } from "../../app/hooks";
@@ -13,16 +14,17 @@ import { MdDelete } from "react-icons/md";
 
 interface TodoItemsProps {
   item: Todos;
+  onClick: () => void;
 }
 
-const TodoItems: FC<TodoItemsProps> = ({ item }: TodoItemsProps) => {
+const TodoItems: FC<TodoItemsProps> = ({ item, onClick }: TodoItemsProps) => {
   const [isDeleteMode, setIsDeleteMode] = useState<boolean>(false);
   const ButtonHandler = useLongPress(() => setIsDeleteMode(!isDeleteMode), {
     threshold: 500,
   });
   const dispatch = useAppDispatch();
   const clickHandler = () => {
-    dispatch(changeIsDone(item));
+    dispatch(updateItem({ ...item, isDone: !item.isDone }));
   };
   const renderDoneIcon = () => {
     if (!isDeleteMode) {
@@ -37,7 +39,15 @@ const TodoItems: FC<TodoItemsProps> = ({ item }: TodoItemsProps) => {
   return (
     <div className="todo-items" {...ButtonHandler}>
       {renderDoneIcon()}
-      <p className="todo-items-title">{item.title}</p>
+      <p
+        className="todo-items-title"
+        onClick={() => {
+          onClick();
+          dispatch(changeAppMode("update"));
+        }}
+      >
+        {item.title}
+      </p>
       {isDeleteMode && (
         <MdDelete
           className="delete-button"

@@ -6,12 +6,12 @@ import { useAppSelector } from "./app/hooks";
 import ShadowWindow from "./components/todoApp/ShadowWindow";
 
 const TodoApp: FC = () => {
-  const isOpen: boolean = useAppSelector((state) => state.todoApp.isAdd);
+  const appMode = useAppSelector((state) => state.todoApp.appMode);
   return (
     <div className="todo-app">
       <Helmet title="Todo Application by AndBelkin" />
-      {isOpen && <CreateItemsForm />}
-      {isOpen && <ShadowWindow />}
+      {appMode === "new" && <CreateItemsForm />}
+      {appMode !== "none" && <ShadowWindow />}
       <ItemsContainer />
     </div>
   );

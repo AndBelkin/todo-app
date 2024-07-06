@@ -3,19 +3,24 @@ import "../../styles/CreateItemsForm.css";
 import { MdDelete } from "react-icons/md";
 import { useAppDispatch } from "../../app/hooks";
 import {
-  addNewItem,
   changeAppMode,
   Todos,
+  updateItem,
 } from "../../app/feature/todoApp/todoAppSlice";
 
-const CreateItemsForm: FC = () => {
-  const [input, setInput] = useState<string>("");
+interface EditItemsFormProps {
+  item: Todos;
+}
+
+const EditItemsForm: FC<EditItemsFormProps> = ({
+  item,
+}: EditItemsFormProps) => {
+  const [input, setInput] = useState<string>(item.title);
   const styleSaveButton = input ? { opacity: "100%" } : { opacity: "50%" };
   const dispatch = useAppDispatch();
   const clickHandler = () => {
     if (input) {
-      const newItem: Todos = { id: Math.random(), title: input, isDone: false };
-      dispatch(addNewItem(newItem));
+      dispatch(updateItem({ ...item, title: input }));
       dispatch(changeAppMode("none"));
     }
   };
@@ -28,7 +33,7 @@ const CreateItemsForm: FC = () => {
         >
           Отмена
         </button>
-        <p className="title">Создать задачу</p>
+        <p className="title">Изменить задачу</p>
         <button
           className="save-button"
           onClick={clickHandler}
@@ -41,7 +46,7 @@ const CreateItemsForm: FC = () => {
         <input
           type="text"
           className="input"
-          placeholder="Создать задачу"
+          placeholder="Изменить задачу"
           value={input}
           onChange={(e) => setInput(e.target.value)}
         />
@@ -53,4 +58,4 @@ const CreateItemsForm: FC = () => {
   );
 };
 
-export default CreateItemsForm;
+export default EditItemsForm;

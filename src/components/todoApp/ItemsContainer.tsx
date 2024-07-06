@@ -1,13 +1,15 @@
-import { FC } from "react";
+import { FC, useState } from "react";
 import { IoIosAddCircle } from "react-icons/io";
 import "../../styles/ItemsContainer.css";
 import TodoItems from "./TodoItems";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
-import { changeOpen, Todos } from "../../app/feature/todoApp/todoAppSlice";
+import { changeAppMode, Todos } from "../../app/feature/todoApp/todoAppSlice";
 import { RiFileList3Line } from "react-icons/ri";
+import EditItemsForm from "./EditItemsForm";
 
 const ItemsContainer: FC = () => {
-  const isOpen: boolean = useAppSelector((state) => state.todoApp.isAdd);
+  const appMode = useAppSelector((state) => state.todoApp.appMode);
+  const [selectItem, setSelectItem] = useState<Todos>();
   const todos: Todos[] = useAppSelector((state) => state.todoApp.todos);
   const dispatch = useAppDispatch();
 
@@ -20,7 +22,13 @@ const ItemsContainer: FC = () => {
       );
     } else
       return todos.map((item, key) => {
-        return <TodoItems item={item} key={key} />;
+        return (
+          <TodoItems
+            item={item}
+            onClick={() => setSelectItem(item)}
+            key={key}
+          />
+        );
       });
   };
 
@@ -34,13 +42,14 @@ const ItemsContainer: FC = () => {
       </header>
       <main className="main">{renderItems()}</main>
       <footer className="footer">
-        {!isOpen && (
+        {appMode === "none" && (
           <IoIosAddCircle
             className="footer-add-button"
-            onClick={() => dispatch(changeOpen())}
+            onClick={() => dispatch(changeAppMode("new"))}
           />
         )}
       </footer>
+      {appMode === "update" && <EditItemsForm item={selectItem!} />}
     </div>
   );
 };
