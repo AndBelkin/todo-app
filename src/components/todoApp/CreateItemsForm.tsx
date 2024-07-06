@@ -45,10 +45,8 @@ const CreateItemsForm: FC = () => {
           value={input}
           onChange={(e) => setInput(e.target.value)}
         />
-        {input ? (
+        {input && (
           <MdDelete className="input-delete" onClick={() => setInput("")} />
-        ) : (
-          false
         )}
       </div>
     </div>

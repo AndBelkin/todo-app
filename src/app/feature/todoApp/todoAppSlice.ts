@@ -14,7 +14,7 @@ export interface Todos {
 
 const initialState: TodoAppSlice = {
   isAdd: false,
-  todos: [{ id: 0, title: "Default Task", isDone: false }],
+  todos: [],
 };
 
 export const todoAppSlice = createSlice({

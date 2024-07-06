@@ -38,13 +38,11 @@ const TodoItems: FC<TodoItemsProps> = ({ item }: TodoItemsProps) => {
     <div className="todo-items" {...ButtonHandler}>
       {renderDoneIcon()}
       <p className="todo-items-title">{item.title}</p>
-      {isDeleteMode ? (
+      {isDeleteMode && (
         <MdDelete
           className="delete-button"
           onClick={() => dispatch(deleteItem(item))}
         />
-      ) : (
-        false
       )}
     </div>
   );

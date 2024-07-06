@@ -10,8 +10,8 @@ const TodoApp: FC = () => {
   return (
     <div className="todo-app">
       <Helmet title="Todo Application by AndBelkin" />
-      {isOpen ? <CreateItemsForm /> : false}
-      {isOpen ? <ShadowWindow /> : false}
+      {isOpen && <CreateItemsForm />}
+      {isOpen && <ShadowWindow />}
       <ItemsContainer />
     </div>
   );
