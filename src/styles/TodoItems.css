@@ -1,5 +1,5 @@
 .todo-items {
-    @apply flex items-center justify-start gap-4 p-4 w-full rounded-lg;
+    @apply flex items-center justify-between gap-4 p-4 w-full rounded-lg cursor-pointer;
     background-color: var(--color-accent)
 }
 
@@ -9,5 +9,11 @@
 }
 
 .todo-items-title {
-    @apply text-2xl;
+    @apply text-2xl w-full;
+}
+
+.delete-button {
+    cursor: pointer;
+    color: var(--color-secondary);
+    font-size: 32px;
 }
