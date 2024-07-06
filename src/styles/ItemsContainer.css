@@ -28,3 +28,7 @@
     color: var(--color-accent);
     font-size: 50px;
 }
+
+.main-no-task {
+    font-size: 150px;
+}

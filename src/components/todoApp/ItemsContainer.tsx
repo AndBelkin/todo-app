@@ -4,6 +4,7 @@ import "../../styles/ItemsContainer.css";
 import TodoItems from "./TodoItems";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { changeOpen, Todos } from "../../app/feature/todoApp/todoAppSlice";
+import { RiFileList3Line } from "react-icons/ri";
 
 const ItemsContainer: FC = () => {
   const isOpen: boolean = useAppSelector((state) => state.todoApp.isAdd);
@@ -11,9 +12,16 @@ const ItemsContainer: FC = () => {
   const dispatch = useAppDispatch();
 
   const renderItems = () => {
-    return todos.map((item, key) => {
-      return <TodoItems item={item} key={key} />;
-    });
+    if (todos.length === 0) {
+      return (
+        <>
+          <RiFileList3Line className="main-no-task" /> <p>Список пуст!</p>
+        </>
+      );
+    } else
+      return todos.map((item, key) => {
+        return <TodoItems item={item} key={key} />;
+      });
   };
 
   return (
