@@ -5,6 +5,7 @@ interface InputCustomProps {
   placeholder: string;
   value: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onKeyDown: (e: React.KeyboardEvent<HTMLInputElement>) => void;
   delEvent: () => void;
 }
 
@@ -12,6 +13,7 @@ const InputCustom: FC<InputCustomProps> = ({
   placeholder,
   value,
   onChange,
+  onKeyDown,
   delEvent,
 }: InputCustomProps) => {
   return (
@@ -22,6 +24,7 @@ const InputCustom: FC<InputCustomProps> = ({
         placeholder={placeholder}
         value={value}
         onChange={onChange}
+        onKeyDown={onKeyDown}
       />
       {value && <MdDelete className="input-delete" onClick={delEvent} />}
     </div>

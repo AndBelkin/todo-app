@@ -26,6 +26,10 @@ const EditItemsForm: FC<EditItemsFormProps> = ({
       dispatch(changeAppMode("none"));
     }
   };
+  const keyDownHandler = (key: string) => {
+    if (key === "Enter") clickHandler();
+    else if (key === "Escape") dispatch(changeAppMode("none"));
+  };
   return (
     <div className="create-items-form">
       <div className="wrapper">
@@ -37,6 +41,7 @@ const EditItemsForm: FC<EditItemsFormProps> = ({
         <InputCustom
           placeholder=""
           value={input}
+          onKeyDown={(e) => keyDownHandler(e.code)}
           onChange={(e) => setInput(e.target.value)}
           delEvent={() => setInput("")}
         />

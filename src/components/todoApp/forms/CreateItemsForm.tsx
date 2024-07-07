@@ -20,6 +20,10 @@ const CreateItemsForm: FC = () => {
       dispatch(changeAppMode("none"));
     }
   };
+  const keyDownHandler = (key: string) => {
+    if (key === "Enter") clickHandler();
+    else if (key === "Escape") dispatch(changeAppMode("none"));
+  };
   return (
     <div className="create-items-form">
       <div className="wrapper">
@@ -31,6 +35,7 @@ const CreateItemsForm: FC = () => {
         <InputCustom
           placeholder={"Создать задачу"}
           value={input}
+          onKeyDown={(e) => keyDownHandler(e.code)}
           onChange={(e) => setInput(e.target.value)}
           delEvent={() => setInput("")}
         />
