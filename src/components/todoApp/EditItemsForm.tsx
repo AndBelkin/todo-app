@@ -1,12 +1,14 @@
 import { FC, useState } from "react";
 import "../../styles/CreateItemsForm.css";
-import { MdDelete } from "react-icons/md";
 import { useAppDispatch } from "../../app/hooks";
 import {
   changeAppMode,
   Todos,
   updateItem,
 } from "../../app/feature/todoApp/todoAppSlice";
+import InputCustom from "./InputCustom";
+import CancelButton from "./buttons/CancelButton";
+import SaveButton from "./buttons/SaveButton";
 
 interface EditItemsFormProps {
   item: Todos;
@@ -27,32 +29,17 @@ const EditItemsForm: FC<EditItemsFormProps> = ({
   return (
     <div className="create-items-form">
       <div className="wrapper">
-        <button
-          className="cancel-button"
-          onClick={() => dispatch(changeAppMode("none"))}
-        >
-          Отмена
-        </button>
+        <CancelButton onClick={() => dispatch(changeAppMode("none"))} />
         <p className="title">Изменить задачу</p>
-        <button
-          className="save-button"
-          onClick={clickHandler}
-          style={styleSaveButton}
-        >
-          Сохранить
-        </button>
+        <SaveButton isHide={input ? false : true} onClick={clickHandler} />
       </div>
       <div className="create-items-form-input">
-        <input
-          type="text"
-          className="input"
-          placeholder="Изменить задачу"
+        <InputCustom
+          placeholder=""
           value={input}
           onChange={(e) => setInput(e.target.value)}
+          delEvent={() => setInput("")}
         />
-        {input && (
-          <MdDelete className="input-delete" onClick={() => setInput("")} />
-        )}
       </div>
     </div>
   );
