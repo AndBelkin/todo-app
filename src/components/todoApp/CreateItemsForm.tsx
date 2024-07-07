@@ -9,6 +9,7 @@ import {
 } from "../../app/feature/todoApp/todoAppSlice";
 import CancelButton from "./buttons/CancelButton";
 import SaveButton from "./buttons/SaveButton";
+import InputCustom from "./InputCustom";
 
 const CreateItemsForm: FC = () => {
   const [input, setInput] = useState<string>("");
@@ -28,16 +29,12 @@ const CreateItemsForm: FC = () => {
         <SaveButton isHide={input ? false : true} onClick={clickHandler} />
       </div>
       <div className="create-items-form-input">
-        <input
-          type="text"
-          className="input"
-          placeholder="Создать задачу"
+        <InputCustom
+          placeholder={"Создать задачу"}
           value={input}
           onChange={(e) => setInput(e.target.value)}
+          delEvent={() => setInput("")}
         />
-        {input && (
-          <MdDelete className="input-delete" onClick={() => setInput("")} />
-        )}
       </div>
     </div>
   );
