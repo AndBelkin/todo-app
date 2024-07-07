@@ -6,6 +6,7 @@ import { changeAppMode, Todos } from "../../app/feature/todoApp/todoAppSlice";
 import EditItemsForm from "./EditItemsForm";
 import AddButton from "./buttons/AddButton";
 import ListIsEmpty from "./ListIsEmpty";
+import ItemsCounter from "./ItemsCounter";
 
 const ItemsContainer: FC = () => {
   const appMode = useAppSelector((state) => state.todoApp.appMode);
@@ -32,9 +33,7 @@ const ItemsContainer: FC = () => {
     <div className="items-container">
       <header className="header">
         <h1 className="header-title">Задачи</h1>
-        {todos.length > 0 && (
-          <p className="header-subtitle">{todos.length} задачи</p>
-        )}
+        <ItemsCounter count={todos.length} />
       </header>
       <main className="main">{renderItems()}</main>
       <footer className="footer">
