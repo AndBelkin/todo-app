@@ -1,11 +1,11 @@
 import { FC, useState } from "react";
-import { IoIosAddCircle } from "react-icons/io";
 import "../../styles/ItemsContainer.css";
 import TodoItems from "./TodoItems";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { changeAppMode, Todos } from "../../app/feature/todoApp/todoAppSlice";
 import { RiFileList3Line } from "react-icons/ri";
 import EditItemsForm from "./EditItemsForm";
+import AddButton from "./buttons/AddButton";
 
 const ItemsContainer: FC = () => {
   const appMode = useAppSelector((state) => state.todoApp.appMode);
@@ -42,12 +42,7 @@ const ItemsContainer: FC = () => {
       </header>
       <main className="main">{renderItems()}</main>
       <footer className="footer">
-        {appMode === "none" && (
-          <IoIosAddCircle
-            className="footer-add-button"
-            onClick={() => dispatch(changeAppMode("new"))}
-          />
-        )}
+        <AddButton onClick={() => dispatch(changeAppMode("new"))} />
       </footer>
       {appMode === "update" && <EditItemsForm item={selectItem!} />}
     </div>

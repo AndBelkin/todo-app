@@ -23,12 +23,6 @@
     @apply flex justify-end w-full min-h-[50px];
 }
 
-.items-container .footer-add-button {
-    cursor: pointer;
-    color: var(--color-accent);
-    font-size: 50px;
-}
-
 .main-no-task {
     font-size: 150px;
 }

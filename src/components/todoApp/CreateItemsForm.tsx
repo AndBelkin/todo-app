@@ -7,10 +7,11 @@ import {
   changeAppMode,
   Todos,
 } from "../../app/feature/todoApp/todoAppSlice";
+import CancelButton from "./buttons/CancelButton";
+import SaveButton from "./buttons/SaveButton";
 
 const CreateItemsForm: FC = () => {
   const [input, setInput] = useState<string>("");
-  const styleSaveButton = input ? { opacity: "100%" } : { opacity: "50%" };
   const dispatch = useAppDispatch();
   const clickHandler = () => {
     if (input) {
@@ -22,20 +23,9 @@ const CreateItemsForm: FC = () => {
   return (
     <div className="create-items-form">
       <div className="wrapper">
-        <button
-          className="cancel-button"
-          onClick={() => dispatch(changeAppMode("none"))}
-        >
-          Отмена
-        </button>
+        <CancelButton onClick={() => dispatch(changeAppMode("none"))} />
         <p className="title">Создать задачу</p>
-        <button
-          className="save-button"
-          onClick={clickHandler}
-          style={styleSaveButton}
-        >
-          Сохранить
-        </button>
+        <SaveButton isHide={input ? false : true} onClick={clickHandler} />
       </div>
       <div className="create-items-form-input">
         <input

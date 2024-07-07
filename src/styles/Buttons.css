@@ -1,0 +1,17 @@
+button {
+    @apply px-2 py-1 rounded-lg;
+}
+
+button:focus {
+    outline: 1px #959EEF solid;
+}
+
+.cancel-button {
+    color: #959EEF;
+}
+
+.add-button {
+    cursor: pointer;
+    color: var(--color-accent);
+    font-size: 50px;
+}

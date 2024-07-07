@@ -13,20 +13,6 @@
     @apply flex justify-between items-center;
 }
 
-.create-items-form button {
-    @apply px-2 py-1 rounded-lg;
-}
-
-.create-items-form button:focus {
-    outline: 1px #959EEF solid;
-}
-
-.cancel-button {
-    color: #959EEF;
-}
-.save-button {
-    opacity: 50%;
-}
 .title {
     cursor: default;
     font-size: 20px;
