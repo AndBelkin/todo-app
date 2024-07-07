@@ -3,9 +3,9 @@ import "../../styles/ItemsContainer.css";
 import TodoItems from "./TodoItems";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { changeAppMode, Todos } from "../../app/feature/todoApp/todoAppSlice";
-import { RiFileList3Line } from "react-icons/ri";
 import EditItemsForm from "./EditItemsForm";
 import AddButton from "./buttons/AddButton";
+import ListIsEmpty from "./ListIsEmpty";
 
 const ItemsContainer: FC = () => {
   const appMode = useAppSelector((state) => state.todoApp.appMode);
@@ -15,11 +15,7 @@ const ItemsContainer: FC = () => {
 
   const renderItems = () => {
     if (todos.length === 0) {
-      return (
-        <>
-          <RiFileList3Line className="main-no-task" /> <p>Список пуст!</p>
-        </>
-      );
+      return <ListIsEmpty />;
     } else
       return todos.map((item, key) => {
         return (
