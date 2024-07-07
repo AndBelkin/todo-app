@@ -3,7 +3,7 @@ import "../../styles/ItemsContainer.css";
 import TodoItems from "./TodoItems";
 import { useAppDispatch, useAppSelector } from "../../app/hooks";
 import { changeAppMode, Todos } from "../../app/feature/todoApp/todoAppSlice";
-import EditItemsForm from "./EditItemsForm";
+import EditItemsForm from "./forms/EditItemsForm";
 import AddButton from "./buttons/AddButton";
 import ListIsEmpty from "./ListIsEmpty";
 import ItemsCounter from "./ItemsCounter";

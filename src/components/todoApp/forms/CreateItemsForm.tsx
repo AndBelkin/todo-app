@@ -1,14 +1,14 @@
 import { FC, useState } from "react";
-import "../../styles/CreateItemsForm.css";
-import { useAppDispatch } from "../../app/hooks";
+import { useAppDispatch } from "../../../app/hooks";
 import {
   addNewItem,
   changeAppMode,
   Todos,
-} from "../../app/feature/todoApp/todoAppSlice";
-import CancelButton from "./buttons/CancelButton";
-import SaveButton from "./buttons/SaveButton";
-import InputCustom from "./InputCustom";
+} from "../../../app/feature/todoApp/todoAppSlice";
+import CancelButton from "../buttons/CancelButton";
+import SaveButton from "../buttons/SaveButton";
+import InputCustom from "../InputCustom";
+import "../../../styles/CreateItemsForm.css";
 
 const CreateItemsForm: FC = () => {
   const [input, setInput] = useState<string>("");

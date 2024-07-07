@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { Helmet } from "react-helmet";
 import ItemsContainer from "./components/todoApp/ItemsContainer";
-import CreateItemsForm from "./components/todoApp/CreateItemsForm";
+import CreateItemsForm from "./components/todoApp/forms/CreateItemsForm";
 import { useAppSelector } from "./app/hooks";
 import ShadowWindow from "./components/todoApp/ShadowWindow";
 
