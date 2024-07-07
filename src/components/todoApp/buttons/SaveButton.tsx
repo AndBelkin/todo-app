@@ -12,7 +12,12 @@ const SaveButton: FC<SaveButtonProps> = ({
 }: SaveButtonProps) => {
   const buttonStyle = isHide ? { opacity: "50%" } : { opacity: "100%" };
   return (
-    <button className="save-button" onClick={onClick} style={buttonStyle}>
+    <button
+      className="save-button"
+      onClick={onClick}
+      style={buttonStyle}
+      disabled={isHide}
+    >
       Сохранить
     </button>
   );
