@@ -7,7 +7,9 @@ import "./styles/index.css";
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <BrowserRouter>
+      <header />
       <AppRouter />
+      <footer />
     </BrowserRouter>
   </StrictMode>,
 );

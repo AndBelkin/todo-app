@@ -1,0 +1,29 @@
+h1 {
+  @apply text-7xl uppercase font-black;
+}
+
+h2 {
+  @apply text-6xl font-extrabold lowercase text-red-800;
+}
+
+h3 {
+  @apply text-5xl uppercase font-bold;
+}
+
+h4 {
+  @apply text-4xl font-bold lowercase text-red-800;
+}
+
+h5 {
+  @apply text-3xl uppercase font-bold;
+}
+
+h6 {
+  @apply text-2xl font-bold lowercase text-red-800;
+}
+
+h2::before,
+h4::before,
+h6::before {
+  content: "#";
+}

@@ -1,1 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap");
+
 @import "tailwindcss";
+@import "./headlines.css";
+
+@theme {
+  --font-default: "JetBrains Mono", monospace;
+}
+
+#root {
+  @apply grid grid-rows-[auto_1fr_auto] min-h-screen;
+}
+
+body {
+  @apply font-default text-base font-normal text-gray-950;
+}
+
+.container {
+  @apply max-w-7xl w-full mx-auto my-0 px-8; /* 1280px */
+}
+
+a.link {
+  @apply text-red-800 transition-colors px-1;
+}
+
+a.link:hover {
+  @apply outline-2 outline-red-800;
+}
