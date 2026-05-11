@@ -1,0 +1,25 @@
+@reference "../../app/styles/index.css";
+
+.header {
+  @apply py-4 bg-red-800;
+}
+
+.header .container {
+  @apply flex items-center justify-between;
+}
+
+.header-logo {
+  @apply text-2xl font-black text-white;
+}
+
+.header-nav {
+  @apply flex items-center gap-4;
+}
+
+.header-nav-item {
+  @apply px-4 py-2 rounded-lg text-red-900 bg-white transition-colors font-bold;
+}
+
+.header-nav-item:hover {
+  @apply text-white bg-red-900;
+}
