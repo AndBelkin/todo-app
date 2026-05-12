@@ -17,5 +17,9 @@ export interface TodoState {
   getUnfinished: () => Todo[];
 }
 
+export interface TodoItemProps {
+  item: Todo;
+}
+
 export type TodoCreateDate = Omit<Todo, "id" | "createdAt">;
 export type TodoUpdateDate = Partial<Omit<Todo, "id">>;
