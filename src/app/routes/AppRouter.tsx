@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router";
-import { IndexPage } from "../../pages";
+import { IndexPage, NotFoundPage } from "../../pages";
 
 export const AppRouter = () => {
   return (
@@ -10,7 +10,7 @@ export const AppRouter = () => {
         <Route index element={<p>Show TodoItem</p>} />
         <Route path="edit" element={<p>Edit TodoItem</p>} />
       </Route>
-      <Route path="*" element={<h1>Page not found!</h1>} />
+      <Route path="*" element={<NotFoundPage />} />
     </Routes>
   );
 };
