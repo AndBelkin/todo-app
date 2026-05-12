@@ -5,7 +5,26 @@ import { createJSONStorage, persist } from "zustand/middleware";
 export const useTodoStore = create<TodoState>()(
   persist(
     (set, get) => ({
-      todos: [],
+      todos: [
+        {
+          id: crypto.randomUUID(),
+          title: "First task",
+          completed: false,
+          createdAt: new Date().toISOString(),
+        },
+        {
+          id: crypto.randomUUID(),
+          title: "Second task",
+          completed: false,
+          createdAt: new Date().toISOString(),
+        },
+        {
+          id: crypto.randomUUID(),
+          title: "Third task",
+          completed: false,
+          createdAt: new Date().toISOString(),
+        },
+      ],
       create: (data) => {
         const newTodo: Todo = { ...data, id: crypto.randomUUID(), createdAt: new Date().toISOString() };
         set((state) => ({ todos: [...state.todos, newTodo] }));
