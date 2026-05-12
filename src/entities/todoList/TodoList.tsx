@@ -1,16 +1,13 @@
 import type { FC } from "react";
 import "./TodoList.css";
-import { useTodoStore } from "../todo/model/slice";
-import { TodoItem } from "../todo/TodoItem";
+import { useTodoList } from "./model/hooks";
 
 export const TodoList: FC = () => {
-  const { todos } = useTodoStore();
-  const EmptyList = <p className="todo-list-empty">Your list is empty...</p>;
-  const renderList = () => todos.map((todo) => <TodoItem item={todo} key={todo.id} />);
+  const todoList = useTodoList();
   return (
     <section className="todo-list">
       <h4>My Tasks</h4>
-      <div className="todo-list-desk">{todos.length ? renderList() : EmptyList}</div>
+      <div className="todo-list-desk">{todoList}</div>
     </section>
   );
 };
