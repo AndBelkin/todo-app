@@ -2,7 +2,7 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router";
 import { AppRouter } from "./routes/AppRouter";
-import { Header } from "../widgets";
+import { Header, Footer } from "../widgets";
 import "./styles/index.css";
 
 createRoot(document.getElementById("root")!).render(
@@ -10,7 +10,7 @@ createRoot(document.getElementById("root")!).render(
     <BrowserRouter>
       <Header />
       <AppRouter />
-      <footer />
+      <Footer />
     </BrowserRouter>
   </StrictMode>,
 );
