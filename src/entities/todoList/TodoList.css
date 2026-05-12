@@ -1,0 +1,15 @@
+@reference "../../app/styles/index.css";
+
+.todo-list {
+  @apply flex flex-col gap-4 my-8;
+}
+
+.todo-list-desk {
+  @apply grid grid-cols-5 gap-6 items-stretch justify-stretch;
+  @apply p-6 bg-gray-100 rounded-3xl;
+}
+
+.todo-list-empty {
+  @apply text-center text-gray-500 lowercase select-none;
+  grid-column: 1 / -1;
+}
