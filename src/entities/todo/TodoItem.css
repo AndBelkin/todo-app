@@ -1,7 +1,7 @@
 @reference '../../app/styles/index.css';
 
 .todo-item {
-  @apply max-w-max relative;
+  @apply max-w-max relative max-h-max;
 
   border-radius: 1rem 1rem 0.5rem 0.5rem;
 }
@@ -27,12 +27,12 @@
 
 .todo-item-main {
   @apply flex flex-col gap-2 p-4 border border-gray-300;
-  @apply cursor-pointer;
+  @apply cursor-pointer bg-white;
   border-radius: 0 0 0.5rem 0.5rem;
 }
 
 .todo-item-title {
-  @apply max-w-xs w-max;
+  @apply w-full;
 }
 
 .todo-item-createdAt {
