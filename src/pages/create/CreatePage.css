@@ -1,0 +1,49 @@
+@reference "../../app/styles/index.css";
+
+.create-page {
+  @apply h-full;
+}
+
+.create-page .container {
+  @apply flex items-center justify-center h-full;
+}
+
+.create-form {
+  @apply bg-gray-100 rounded-2xl p-4 flex flex-col gap-4 w-1/2;
+}
+
+.create-form:hover {
+  @apply shadow-md shadow-gray-300;
+}
+
+.create-form-title {
+  @apply text-center;
+}
+
+.create-form-desc {
+  @apply text-sm text-gray-600 text-justify indent-2;
+}
+
+.create-form-error {
+  @apply text-xs text-red-800;
+}
+
+.create-form-error::before {
+  content: "Error: ";
+}
+
+.create-form-label {
+  @apply text-xs text-gray-600;
+}
+
+.create-form-input {
+  @apply px-4 py-2 rounded-lg bg-white -mt-3;
+}
+
+.create-form-input:hover {
+  @apply outline outline-red-800;
+}
+
+.create-form-input:focus {
+  @apply outline-2 outline-red-800;
+}
