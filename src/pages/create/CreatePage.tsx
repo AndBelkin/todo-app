@@ -23,7 +23,7 @@ export const CreatePage: FC = () => {
             value={title}
             onChange={handleChange}
           />
-          <Button view="accent" onClick={handleCreate}>
+          <Button view="primary" onClick={handleCreate}>
             Create
           </Button>
         </form>

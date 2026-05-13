@@ -9,11 +9,11 @@
 .todo-item:hover,
 .todo-item:focus {
   @apply scale-101;
-  @apply shadow-md shadow-gray-300;
+  @apply shadow-md shadow-black-300;
 }
 
 .todo-item-header {
-  @apply p-1 flex justify-end bg-red-800 cursor-grab;
+  @apply p-1 flex justify-end bg-black-400 cursor-grab;
   border-radius: 1rem 1rem 0 0;
 }
 
@@ -22,12 +22,12 @@
 }
 
 .todo-item-remove:hover {
-  @apply text-red-200;
+  @apply text-black-900;
 }
 
 .todo-item-main {
-  @apply flex flex-col gap-2 p-4 border border-gray-300;
-  @apply cursor-pointer bg-white;
+  @apply flex flex-col gap-2 p-4 border border-black-700;
+  @apply cursor-pointer bg-black-800;
   border-radius: 0 0 0.5rem 0.5rem;
 }
 
@@ -36,5 +36,5 @@
 }
 
 .todo-item-createdAt {
-  @apply text-xs text-gray-500 select-none;
+  @apply text-xs text-white select-none;
 }

@@ -9,23 +9,23 @@
 }
 
 .create-form {
-  @apply bg-gray-100 rounded-2xl p-4 flex flex-col gap-4 w-1/2;
+  @apply bg-black-200 rounded-2xl p-4 flex flex-col gap-4 w-1/2;
 }
 
 .create-form:hover {
-  @apply shadow-md shadow-gray-300;
+  @apply shadow-md shadow-black-200;
 }
 
 .create-form-title {
-  @apply text-center;
+  @apply text-4xl text-center;
 }
 
 .create-form-desc {
-  @apply text-sm text-gray-600 text-justify indent-2;
+  @apply text-2xl text-white text-justify indent-2;
 }
 
 .create-form-error {
-  @apply text-xs text-red-800;
+  @apply text-base text-red-400;
 }
 
 .create-form-error::before {
@@ -33,17 +33,17 @@
 }
 
 .create-form-label {
-  @apply text-xs text-gray-600;
+  @apply text-lg text-white;
 }
 
 .create-form-input {
-  @apply px-4 py-2 rounded-lg bg-white -mt-3;
+  @apply px-4 py-2 rounded-lg bg-black-500 -mt-3 text-lg;
 }
 
 .create-form-input:hover {
-  @apply outline outline-red-800;
+  @apply outline outline-black-600;
 }
 
 .create-form-input:focus {
-  @apply outline-2 outline-red-800;
+  @apply outline-2 outline-black-600;
 }

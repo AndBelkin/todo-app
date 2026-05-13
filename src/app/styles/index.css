@@ -1,10 +1,19 @@
-@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe:ital@0;1&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 @import "tailwindcss";
 @import "./headlines.css";
 
 @theme {
-  --font-default: "JetBrains Mono", monospace;
+  --font-accent: "Montserrat", sans-serif;
+  --font-default: "Alumni Sans Pinstripe", sans-serif;
+  --color-black-100: #111111;
+  --color-black-200: #222222;
+  --color-black-300: #333333;
+  --color-black-400: #444444;
+  --color-black-500: #555555;
+  --color-black-600: #666666;
+  --color-black-700: #777777;
+  --color-black-800: #888888;
+  --color-black-900: #999999;
 }
 
 #root {
@@ -12,17 +21,9 @@
 }
 
 body {
-  @apply font-default text-base font-normal text-gray-950;
+  @apply font-default text-base font-normal bg-black-300 text-white;
 }
 
 .container {
   @apply max-w-7xl w-full mx-auto my-0 px-8; /* 1280px */
-}
-
-a.link {
-  @apply text-red-800 transition-colors px-1;
-}
-
-a.link:hover {
-  @apply outline-2 outline-red-800;
 }

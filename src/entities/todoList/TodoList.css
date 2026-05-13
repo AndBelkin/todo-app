@@ -5,11 +5,10 @@
 }
 
 .todo-list-desk {
-  @apply grid grid-cols-5 gap-6 items-stretch justify-stretch;
-  @apply p-6 bg-gray-100 rounded-3xl;
+  @apply flex gap-6 items-stretch justify-stretch flex-wrap;
+  @apply p-6 rounded-3xl;
 }
 
 .todo-list-empty {
-  @apply text-center text-gray-500 lowercase select-none;
-  grid-column: 1 / -1;
+  @apply text-center text-white lowercase select-none text-2xl w-full;
 }

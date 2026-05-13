@@ -6,7 +6,7 @@ export const TodoList: FC = () => {
   const todoList = useTodoList();
   return (
     <section className="todo-list">
-      <h4>My Tasks</h4>
+      <h4>Today</h4>
       <div className="todo-list-desk">{todoList}</div>
     </section>
   );

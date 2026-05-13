@@ -15,9 +15,7 @@ export const NotFoundPage: FC = () => {
           <h3>Page not found</h3>
         </div>
         <p>The link you clicked may be broken or the page may have been removed.</p>
-        <Button onClick={handleGoToBack} view="accent">
-          Go to Back
-        </Button>
+        <Button onClick={handleGoToBack}>Go to Back</Button>
       </div>
     </main>
   );

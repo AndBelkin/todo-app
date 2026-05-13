@@ -2,16 +2,16 @@
 
 .btn {
   @apply flex items-center justify-center gap-1 min-w-28 relative;
-  @apply px-4 py-2 rounded-lg cursor-pointer transition-colors uppercase;
+  @apply px-4 py-2 rounded-lg cursor-pointer transition-colors uppercase text-lg;
 }
 
 .btn_primary {
-  @apply bg-gray-400 text-white;
-  @apply border-b-4 border-b-gray-600;
+  @apply bg-black-400 text-white;
+  @apply border-b-4 border-b-black-100;
 }
 
 .btn_primary:hover:not(:disabled) {
-  @apply bg-gray-300;
+  @apply bg-black-500;
 }
 
 .btn_accent {

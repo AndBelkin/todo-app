@@ -7,11 +7,20 @@ export const Header: FC = () => {
     <header className="header">
       <div className="container">
         <NavLink to="/" className="header-logo">
-          TodoApp
+          Reminder
         </NavLink>
         <nav className="header-nav">
-          <NavLink to="/new" className="header-nav-item">
-            Create
+          <NavLink to="/#" className="header-nav-item">
+            Sort by
+          </NavLink>
+          <NavLink to="/#" className="header-nav-item">
+            Manage categories
+          </NavLink>
+          <NavLink to="/#" className="header-nav-item">
+            Trash
+          </NavLink>
+          <NavLink to="/#" className="header-nav-item">
+            Setting
           </NavLink>
         </nav>
       </div>

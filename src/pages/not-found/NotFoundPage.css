@@ -4,10 +4,18 @@
   @apply flex flex-col items-center justify-center h-full;
 }
 
+.not-found-page .wrapper {
+  @apply flex flex-col items-center;
+}
+
 .not-found-page h2 {
-  @apply text-[164px];
+  @apply text-[164px] font-accent;
+}
+
+.not-found-page h3 {
+  @apply font-accent;
 }
 
 .not-found-page p {
-  @apply max-w-1/3 text-center text-gray-600 py-4;
+  @apply max-w-1/3 text-center text-white text-lg py-4;
 }
