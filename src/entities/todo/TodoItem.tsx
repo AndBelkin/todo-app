@@ -1,7 +1,7 @@
 import type { FC } from "react";
 import type { TodoItemProps } from "./model/types";
 import { useTodoItem } from "./model/hooks";
-import { PiArrowsCounterClockwiseLight as RepeatIcon } from "react-icons/pi";
+import { HiMiniArrowPath as RepeatIcon } from "react-icons/hi2";
 import { CiClock2 as ClockIcon } from "react-icons/ci";
 import "./TodoItem.css";
 
