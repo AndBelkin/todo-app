@@ -7,7 +7,7 @@ import "./ManageCategoriesPage.css";
 export const ManageCategoriesPage: FC = () => {
   const { categories, addCategory } = useTodoStore();
   const [newCategory, setNewCategory] = useState({ name: "", color: "#000000" });
-  const renderCategories = () => categories.map((cat) => <CategoryItem id={cat.id} />);
+  const renderCategories = () => categories.map((cat) => <CategoryItem size="big" edit id={cat.id} />);
   const handleChangeName = (event: ChangeEvent<HTMLInputElement>) =>
     setNewCategory({ ...newCategory, name: event.target.value });
   const handleChangeColor = (event: ChangeEvent<HTMLInputElement>) =>

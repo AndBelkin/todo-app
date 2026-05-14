@@ -1,19 +1,21 @@
 import type { FC } from "react";
-import { useTodoStore } from "../../entities";
 import "./CategoryItem.css";
+import { IoCloseOutline } from "react-icons/io5";
+import { useCategoryItem } from "./models/hooks";
 
 interface CategoryItemProps {
   id: string;
+  size?: "small" | "normal" | "big";
+  edit?: boolean;
 }
 
-export const CategoryItem: FC<CategoryItemProps> = ({ id }) => {
-  const { getCategories } = useTodoStore();
-  const item = getCategories().find((item) => item.id === id);
+export const CategoryItem: FC<CategoryItemProps> = ({ id, size = "normal", edit = false }) => {
+  const { item, categoryClassName, categoryStyle, handlerRemove } = useCategoryItem(id, size);
   if (!item) return <p>No Category</p>;
-  else
-    return (
-      <span className="category-item" style={{ backgroundColor: item.color }}>
-        {item.name}
-      </span>
-    );
+  return (
+    <span className={categoryClassName} style={categoryStyle}>
+      {item.name}
+      {edit && <IoCloseOutline onClick={handlerRemove} />}
+    </span>
+  );
 };
