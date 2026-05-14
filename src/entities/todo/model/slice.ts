@@ -60,6 +60,7 @@ export const useTodoStore = create<TodoState>()(
 
       removeCategory: (id) =>
         set((state) => ({
+          todos: state.todos.map((todo) => (todo.categoryID === id ? { ...todo, categoryID: null } : todo)),
           categories: state.categories.filter((cat) => cat.id !== id),
         })),
 
