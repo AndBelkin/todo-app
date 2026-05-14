@@ -1,0 +1,28 @@
+@reference "../../app/styles/index.css";
+
+.manage-categories-page .container {
+  @apply pt-8 flex flex-col gap-4;
+}
+
+.categories-list {
+  @apply flex items-center flex-wrap gap-4;
+  @apply p-4 bg-black-400 rounded-2xl;
+}
+
+.add-category-form {
+  @apply flex items-center gap-4 w-1/2;
+  @apply px-4 py-2 bg-black-400 rounded-2xl;
+}
+
+.add-category-form input[type="text"] {
+  @apply w-full px-4 py-1 bg-black-500 text-lg;
+  @apply rounded-lg;
+}
+
+.add-category-form input[type="text"]:focus {
+  @apply outline-none bg-black-600;
+}
+
+.add-category-form input[type="color"] {
+  @apply h-10 w-20 rounded-lg;
+}

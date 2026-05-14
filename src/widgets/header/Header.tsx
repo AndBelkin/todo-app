@@ -13,7 +13,7 @@ export const Header: FC = () => {
           <NavLink to="/#" className="header-nav-item">
             Sort by
           </NavLink>
-          <NavLink to="/#" className="header-nav-item">
+          <NavLink to="/manage-categories" className="header-nav-item">
             Manage categories
           </NavLink>
           <NavLink to="/#" className="header-nav-item">
