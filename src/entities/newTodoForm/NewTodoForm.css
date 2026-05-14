@@ -44,3 +44,19 @@
 .form-input:focus {
   @apply outline-none;
 }
+
+.form-select-params {
+  @apply flex flex-col gap-2 p-4;
+}
+
+.form-select-params p {
+  @apply text-2xl;
+}
+
+.form-select-params .category-list {
+  @apply flex items-center gap-2;
+}
+
+.form-select-params .category-item {
+  @apply max-w-max;
+}

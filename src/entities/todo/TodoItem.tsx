@@ -1,15 +1,25 @@
-import type { FC } from "react";
+import type { CSSProperties, FC } from "react";
 import type { TodoItemProps } from "./model/types";
 import { useTodoItem } from "./model/hooks";
 import { HiMiniArrowPath as RepeatIcon } from "react-icons/hi2";
 import { CiClock2 as ClockIcon } from "react-icons/ci";
 import "./TodoItem.css";
+import { useTodoStore } from "./model/slice";
 
 export const TodoItem: FC<TodoItemProps> = ({ item }) => {
   const { CheckboxIcon, handleOpenTodo, handleKeyPress, handleToggleTodo } = useTodoItem(item);
-
+  const { categories } = useTodoStore();
+  const categoryColor = item.categoryID ? categories.find((cat) => cat.id === item.categoryID)?.color : "";
+  const borderStyle: CSSProperties = { borderRightWidth: "8px", borderRightColor: categoryColor };
   return (
-    <div className="todo-item" onClick={handleOpenTodo} onKeyDown={handleKeyPress} role="button" tabIndex={0}>
+    <div
+      className="todo-item"
+      onClick={handleOpenTodo}
+      onKeyDown={handleKeyPress}
+      role="button"
+      tabIndex={0}
+      style={item.categoryID ? borderStyle : {}}
+    >
       <CheckboxIcon className="todo-item-checkbox" onClick={handleToggleTodo} />
       <div className="flex flex-col gap-1">
         <h6 className="todo-item-title">{item.title}</h6>
