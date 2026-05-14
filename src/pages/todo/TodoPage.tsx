@@ -8,6 +8,7 @@ import { SlPencil } from "react-icons/sl";
 import { MdDeleteOutline } from "react-icons/md";
 import { Button } from "../../shared";
 import { HiMiniArrowPath } from "react-icons/hi2";
+import { CategoryItem } from "../../shared/category/CategoryItem";
 
 export const TodoPage: FC = () => {
   const todoID = useParams().id;
@@ -44,7 +45,7 @@ export const TodoPage: FC = () => {
 
           <div className="flex items-center gap-4">
             <CiBoxList />
-            <p>No Category</p>
+            {todo.categoryID ? <CategoryItem id={todo.categoryID} /> : <p>No Category</p>}
           </div>
 
           <p className="text-right">Last modified: 01/01/26</p>

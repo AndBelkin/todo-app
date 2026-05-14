@@ -1,0 +1,5 @@
+@reference "../../app/styles/index.css";
+
+.category-item {
+  @apply px-3 py-0.5 rounded-sm lowercase select-none;
+}

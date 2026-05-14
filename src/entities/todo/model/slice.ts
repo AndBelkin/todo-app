@@ -11,7 +11,7 @@ export const useTodoStore = create<TodoState>()(
           title: "First task",
           completed: false,
           createdAt: new Date().toISOString(),
-          categoryID: null,
+          categoryID: "main",
         },
         {
           id: crypto.randomUUID(),
