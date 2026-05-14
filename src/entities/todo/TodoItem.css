@@ -1,40 +1,24 @@
 @reference '../../app/styles/index.css';
 
 .todo-item {
-  @apply max-w-max relative max-h-max;
-
-  border-radius: 1rem 1rem 0.5rem 0.5rem;
+  @apply flex items-start gap-4 w-full cursor-pointer;
+  @apply p-4 rounded-2xl bg-black-400 transition-all;
 }
 
 .todo-item:hover,
 .todo-item:focus {
-  @apply scale-101;
-  @apply shadow-md shadow-black-300;
+  @apply bg-black-500;
+  @apply shadow-md shadow-black-200;
 }
 
-.todo-item-header {
-  @apply p-1 flex justify-end bg-black-400 cursor-grab;
-  border-radius: 1rem 1rem 0 0;
+.todo-item:focus {
+  @apply outline-1 outline-white;
 }
 
-.todo-item-remove {
-  @apply text-2xl text-white transition-colors cursor-pointer;
+.todo-item-checkbox {
+  @apply text-3xl cursor-pointer transition-colors;
 }
 
-.todo-item-remove:hover {
-  @apply text-black-900;
-}
-
-.todo-item-main {
-  @apply flex flex-col gap-2 p-4 border border-black-700;
-  @apply cursor-pointer bg-black-800;
-  border-radius: 0 0 0.5rem 0.5rem;
-}
-
-.todo-item-title {
-  @apply w-full;
-}
-
-.todo-item-createdAt {
-  @apply text-xs text-white select-none;
+.todo-item-checkbox:hover {
+  @apply text-gray-400;
 }
