@@ -1,0 +1,46 @@
+@reference "../../app/styles/index.css";
+
+.new-todo-form {
+  @apply sticky bottom-0 left-1/2 -translate-x-1/2;
+  @apply max-w-1/2 w-full mx-auto bg-black-200;
+  @apply border-b border-b-black-300;
+  border-radius: 1rem 1rem 0 0;
+}
+
+.form-input-box {
+  @apply p-4 grid grid-cols-[auto_1fr_auto] items-center gap-4;
+  @apply border-b border-b-black-300;
+  border-radius: 1rem 1rem 0 0;
+}
+
+.form-input-box.focus {
+  @apply bg-black-400 border-t border-l border-r border-black-300;
+}
+
+.form-input-icon {
+  @apply text-2xl;
+}
+
+.form-input-icon:last-child {
+  @apply text-3xl cursor-pointer;
+}
+
+.form-buttons-box {
+  @apply flex items-center justify-around px-4 py-2;
+}
+
+.form-button-icon {
+  @apply p-2 rounded-sm text-4xl cursor-pointer transition-colors;
+}
+
+.form-button-icon:hover {
+  @apply bg-black-300;
+}
+
+.form-input {
+  @apply py-2 text-xl;
+}
+
+.form-input:focus {
+  @apply outline-none;
+}
